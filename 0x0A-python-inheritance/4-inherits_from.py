@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 """
-contains the json str function
+Contains the inherits_from function
 """
 
-import json
 
-
-def from_json_string(my_str):
-    """returns an object represented by a JSON string"""
-    return json.loads(my_str)
+def inherits_from(obj, a_class):
+    """returns true if obj is a subclass of a_class, otherwise false"""
+    return(issubclass(type(obj), a_class) and type(obj) != a_class)
