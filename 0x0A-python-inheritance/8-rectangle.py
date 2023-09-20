@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 """
-Contains the "class_to_json" function
+Contains the class BaseGeometry and subclass Rectangle
 """
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-def class_to_json(obj):
-    """returns the dictionary description with simple data structure
-    (list, dictionary, string, integer and boolean)
-    for JSON serialization of an object"""
-    return obj.__dict__
+
+class Rectangle(BaseGeometry):
+    """A representation of a rectangle"""
+    def __init__(self, width, height):
+        """instantiation of the rectangle"""
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
