@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-function that appends a string
+This module contains the function is_same_class
 """
 
 
-def append_write(filename="", text=""):
-    """eturns the number of characters added:"""
-    with open(filename, 'a', encoding='utf=8') as f:
-        return f.write(text)
+def is_same_class(obj, a_class):
+    """return true if obj is the exact class a_class, otherwise false"""
+    return (type(obj) == a_class)
