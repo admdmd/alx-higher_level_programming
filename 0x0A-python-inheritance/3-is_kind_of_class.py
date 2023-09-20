@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 """
-contain the JSON string
+Contains the is_kind_of_class function
 """
 
-import json
 
-
-def to_json_string(my_obj):
-    """returns the JSON representation of an object (string)"""
-    return json.dumps(my_obj)
+def is_kind_of_class(obj, a_class):
+    """True if obj is an instance or inherited from a_class, else False"""
+    return (isinstance(obj, a_class))
