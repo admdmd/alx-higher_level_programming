@@ -1,12 +1,9 @@
 #!/usr/bin/python3
 """
-function that writes an Object to a text file
+Contains the class BaseGeometry
 """
 
-import json
 
-
-def save_to_json_file(my_obj, filename):
-    """Object to a text file, using a JSON representation"""
-    with open(filename, 'w', encoding='utf-8') as f:
-        json.dump(my_obj, f)
+class BaseGeometry:
+    """An empty class"""
+    pass
