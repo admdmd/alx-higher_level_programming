@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""Module lazy_matrix_mul
-Matrix multiplication using NumPy.
-"""
-import numpy
+"""Defines a locked class."""
 
 
-def lazy_matrix_mul(m_a, m_b):
-    """Multiplies m_a and m_b using
-    matmul, and returns the result.
+class LockedClass:
     """
-    return numpy.matmul(m_a, m_b)
+    Prevent the user from instantiating new LockedClass attributes
+    for anything but attributes called 'first_name'.
+    """
+
+    __slots__ = ["first_name"]
