@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""function that divides all elements of a matrix."""
+"""
+Module matrix_divided
+Divides each element of a matrix of numbers by a number
+"""
+
 
 def matrix_divided(matrix, div):
     """Returns a new matrix (list of list)
