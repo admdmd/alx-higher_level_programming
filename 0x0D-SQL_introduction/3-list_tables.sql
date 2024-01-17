@@ -1,1 +1,1 @@
-./list_tables.sh
+./list_tables.sh mysql
