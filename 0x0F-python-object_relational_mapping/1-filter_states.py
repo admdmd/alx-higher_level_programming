@@ -1,30 +1,15 @@
 #!/usr/bin/python3
 """
-Script that all states with a name
-starting with upper N from the database hbtn_0e_0_usa
+Lists all states with a name starting with N from the database hbtn_0e_0_usa.
+Usage: ./1-filter_states.py <mysql username> \
+                             <mysql password> \
+                             <database name>
 """
-import MySQLdb
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
-    us = sys.argv[1]
-    ps = sys.argv[2]
-    dbs = sys.argv[3]
-
-    try:
-        db = MySQLdb.connect(
-            host="localhost", port=3306, user=us, passwd=ps, db=dbs
-        )
-        cursor = db.cursor()
-        cursor.execute(
-            "SELECT all FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
-        )
-        rows = cursor.fetchall()
-        for row in rows:
-            print(row)
-        cursor.close()
-        db.close()
-
-    except MySQLdb.Error as e:
-        print("Error connecting to MySQL:", e)
-        sys.exit(1)
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
+    c.execute("SELECT * FROM `states` ORDER BY `id`")
+    [print(state) for state in c.fetchall() if state[1][0] == "N"]
