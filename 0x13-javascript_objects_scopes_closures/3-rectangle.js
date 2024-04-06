@@ -13,15 +13,11 @@ class Rectangle {
         }
     }
 
-    print() {
-        if (this.width === null || this.height === null) {
-            console.log("Empty Object");
-        } else {
-            // Print the rectangle using the character X
-            for (let i = 0; i < this.height; i++) {
-                console.log("X".repeat(this.width));
-            }
-        }
+    print () {
+    for (let i = 0; i < this.height; i++) {
+      console.log('X'.repeat(this.width));
     }
+  }
 }
+
 module.exports = Rectangle;
